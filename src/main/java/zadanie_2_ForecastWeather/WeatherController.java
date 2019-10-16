@@ -18,7 +18,7 @@ public class WeatherController {
 
 //            Weather forObject = restTemplate.getForObject("http://api.weatherstack.com/current?access_key=bee9823c5b680ef0e45834c2cc477727&query=Szczecin", Weather.class);
 //         //ExchangeRate forObject = restTemplate.getForObject("https://api.exchangeratesapi.io/latest", ExchangeRate.class);
-//           String location = forObject.getName();//todo powoduje blad
+//           String location = forObject.getName();//todo its making error
 //         //  Location location2 = forObject.getLocation();
 //         //System.out.println("Current EUR rate: "+ EurRate+ " PLN"); //todo is working
 //            System.out.println(forObject + "/ " + location);
