@@ -13,22 +13,13 @@ import static com.sun.tools.internal.xjc.reader.Ring.add;
 public class CurrencyController extends VerticalLayout {
 
 
-//
-//        @GetMapping("/euroRate")
-//        public String get() {
-//            return "euroRate";
-//        }
-
         public CurrencyController() {
 
             RestTemplate restTemplate = new RestTemplate();
 
             // Rate forObject = restTemplate.getForObject("http://api.nbp.pl/api/exchangerates/rates/a/eur/2019-10-10/", Rate.class);
             EuroRate forObject2 = restTemplate.getForObject("http://api.nbp.pl/api/exchangerates/rates/a/eur/2019-10-10/", EuroRate.class);
-            //for (EuroRate euroRate : forObject) {
 
-            // System.out.println(forObject.getMid());//todo null??
-            // System.out.println(forObject2.getRates());
 
             double eurRate = forObject2.getRates().get(0).getMid();
 

@@ -1,21 +1,14 @@
 package zadanie_3_GuessWhatCurrency;
 
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.Route;
-import learning.Rate;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.client.RestTemplate;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.Route;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.client.RestTemplate;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
-
-import static com.sun.tools.internal.xjc.reader.Ring.add;
 
 @Route("rate")
 @Controller
@@ -43,7 +36,7 @@ public class CurrencyController extends VerticalLayout {
         System.out.println("Waluta: " + yourCurrencyCountry);
 
         double rate=0;
-        //System.out.println("Kurs: " + rate);
+
 //todo nie jestem dumny z tej części poniżej :/
         if (randomCountry == 0) {
           rate = forObject2.getRates(currencies).getCAD();
@@ -120,12 +113,12 @@ public class CurrencyController extends VerticalLayout {
         int ktory_raz = 1;
         Random rand = new Random();
         double liczba = rate;
-        //double liczba = rand.nextDouble(100.00);
 
         double liczba2x0 = (double) Math.round(liczba * 100) / 100;
         while (wynik == false) {
             //System.out.println(aUD);
             System.out.print("Wprowadź wartość waluty (np. 4.24, wystarczą dwa miejsca po \"przecinku\", kropka zamiast przecinka!): ");
+            System.out.println();
             // double zgadnij = Integer.parseInt(reader.readLine());
             Double zgadnij = null;
             try {
