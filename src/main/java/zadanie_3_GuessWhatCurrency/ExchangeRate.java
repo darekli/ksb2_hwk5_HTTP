@@ -29,7 +29,7 @@ public class ExchangeRate {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("rates")
-    public Rates getRates(String s) {
+    public Rates getRates(String[] s) {
         return rates;
     }
 

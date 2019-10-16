@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-public class ZgadnijLiczbe
-{
+public class ZgadnijLiczbe {
 
+CurrencyController currencyController = new CurrencyController();
     public static void main(String[] args) throws NumberFormatException, IOException
     {
         // TODO Auto-generated method stub
@@ -23,6 +23,7 @@ public class ZgadnijLiczbe
         double liczba2x0 = (double) Math.round(liczba * 100) / 100;
         while (wynik==false)
         {
+            //System.out.println(aUD);
             System.out.print("Wprowadź liczbę z zakresu 0,00-5,00: ");
            // double zgadnij = Integer.parseInt(reader.readLine());
            Double zgadnij = Double.valueOf(reader.readLine());
