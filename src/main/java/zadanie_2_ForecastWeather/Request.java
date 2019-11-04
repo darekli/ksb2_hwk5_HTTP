@@ -1,90 +1,51 @@
-
 package zadanie_2_ForecastWeather;
 
-import java.util.HashMap;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+public class Request{
+	private String unit;
+	private String query;
+	private String language;
+	private String type;
 
+	public void setUnit(String unit){
+		this.unit = unit;
+	}
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "type",
-    "query",
-    "language",
-    "unit"
-})
-public class Request {
+	public String getUnit(){
+		return unit;
+	}
 
-    @JsonProperty("type")
-    private String type;
-    @JsonProperty("query")
-    private String query;
-    @JsonProperty("language")
-    private String language;
-    @JsonProperty("unit")
-    private String unit;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	public void setQuery(String query){
+		this.query = query;
+	}
 
-    @JsonProperty("type")
-    public String getType() {
-        return type;
-    }
+	public String getQuery(){
+		return query;
+	}
 
-    @JsonProperty("type")
-    public void setType(String type) {
-        this.type = type;
-    }
+	public void setLanguage(String language){
+		this.language = language;
+	}
 
-    @JsonProperty("query")
-    public String getQuery() {
-        return query;
-    }
+	public String getLanguage(){
+		return language;
+	}
 
-    @JsonProperty("query")
-    public void setQuery(String query) {
-        this.query = query;
-    }
+	public void setType(String type){
+		this.type = type;
+	}
 
-    @JsonProperty("language")
-    public String getLanguage() {
-        return language;
-    }
+	public String getType(){
+		return type;
+	}
 
-    @JsonProperty("language")
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    @JsonProperty("unit")
-    public String getUnit() {
-        return unit;
-    }
-
-    @JsonProperty("unit")
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this).append("type", type).append("query", query).append("language", language).append("unit", unit).append("additionalProperties", additionalProperties).toString();
-    }
-
+	@Override
+ 	public String toString(){
+		return 
+			"Request{" + 
+			"unit = '" + unit + '\'' + 
+			",query = '" + query + '\'' + 
+			",language = '" + language + '\'' + 
+			",type = '" + type + '\'' + 
+			"}";
+		}
 }

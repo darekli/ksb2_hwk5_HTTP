@@ -1,247 +1,173 @@
-
 package zadanie_2_ForecastWeather;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
+public class Current{
+	private List<String> weatherDescriptions;
+	private String observationTime;
+	private int windDegree;
+	private int visibility;
+	private List<String> weatherIcons;
+	private int feelslike;
+	private String isDay;
+	private String windDir;
+	private int pressure;
+	private int cloudcover;
+	private int precip;
+	private int uvIndex;
+	private int temperature;
+	private int humidity;
+	private int windSpeed;
+	private int weatherCode;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "observation_time",
-    "temperature",
-    "weather_code",
-    "weather_icons",
-    "weather_descriptions",
-    "wind_speed",
-    "wind_degree",
-    "wind_dir",
-    "pressure",
-    "precip",
-    "humidity",
-    "cloudcover",
-    "feelslike",
-    "uv_index",
-    "visibility",
-    "is_day"
-})
-public class Current {
+	public void setWeatherDescriptions(List<String> weatherDescriptions){
+		this.weatherDescriptions = weatherDescriptions;
+	}
 
-    @JsonProperty("observation_time")
-    private String observationTime;
-    @JsonProperty("temperature")
-    private Integer temperature;
-    @JsonProperty("weather_code")
-    private Integer weatherCode;
-    @JsonProperty("weather_icons")
-    private List<String> weatherIcons = null;
-    @JsonProperty("weather_descriptions")
-    private List<String> weatherDescriptions = null;
-    @JsonProperty("wind_speed")
-    private Integer windSpeed;
-    @JsonProperty("wind_degree")
-    private Integer windDegree;
-    @JsonProperty("wind_dir")
-    private String windDir;
-    @JsonProperty("pressure")
-    private Integer pressure;
-    @JsonProperty("precip")
-    private Integer precip;
-    @JsonProperty("humidity")
-    private Integer humidity;
-    @JsonProperty("cloudcover")
-    private Integer cloudcover;
-    @JsonProperty("feelslike")
-    private Integer feelslike;
-    @JsonProperty("uv_index")
-    private Integer uvIndex;
-    @JsonProperty("visibility")
-    private Integer visibility;
-    @JsonProperty("is_day")
-    private String isDay;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	public List<String> getWeatherDescriptions(){
+		return weatherDescriptions;
+	}
 
-    @JsonProperty("observation_time")
-    public String getObservationTime() {
-        return observationTime;
-    }
+	public void setObservationTime(String observationTime){
+		this.observationTime = observationTime;
+	}
 
-    @JsonProperty("observation_time")
-    public void setObservationTime(String observationTime) {
-        this.observationTime = observationTime;
-    }
+	public String getObservationTime(){
+		return observationTime;
+	}
 
-    @JsonProperty("temperature")
-    public Integer getTemperature() {
-        return temperature;
-    }
+	public void setWindDegree(int windDegree){
+		this.windDegree = windDegree;
+	}
 
-    @JsonProperty("temperature")
-    public void setTemperature(Integer temperature) {
-        this.temperature = temperature;
-    }
+	public int getWindDegree(){
+		return windDegree;
+	}
 
-    @JsonProperty("weather_code")
-    public Integer getWeatherCode() {
-        return weatherCode;
-    }
+	public void setVisibility(int visibility){
+		this.visibility = visibility;
+	}
 
-    @JsonProperty("weather_code")
-    public void setWeatherCode(Integer weatherCode) {
-        this.weatherCode = weatherCode;
-    }
+	public int getVisibility(){
+		return visibility;
+	}
 
-    @JsonProperty("weather_icons")
-    public List<String> getWeatherIcons() {
-        return weatherIcons;
-    }
+	public void setWeatherIcons(List<String> weatherIcons){
+		this.weatherIcons = weatherIcons;
+	}
 
-    @JsonProperty("weather_icons")
-    public void setWeatherIcons(List<String> weatherIcons) {
-        this.weatherIcons = weatherIcons;
-    }
+	public List<String> getWeatherIcons(){
+		return weatherIcons;
+	}
 
-    @JsonProperty("weather_descriptions")
-    public List<String> getWeatherDescriptions() {
-        return weatherDescriptions;
-    }
+	public void setFeelslike(int feelslike){
+		this.feelslike = feelslike;
+	}
 
-    @JsonProperty("weather_descriptions")
-    public void setWeatherDescriptions(List<String> weatherDescriptions) {
-        this.weatherDescriptions = weatherDescriptions;
-    }
+	public int getFeelslike(){
+		return feelslike;
+	}
 
-    @JsonProperty("wind_speed")
-    public Integer getWindSpeed() {
-        return windSpeed;
-    }
+	public void setIsDay(String isDay){
+		this.isDay = isDay;
+	}
 
-    @JsonProperty("wind_speed")
-    public void setWindSpeed(Integer windSpeed) {
-        this.windSpeed = windSpeed;
-    }
+	public String getIsDay(){
+		return isDay;
+	}
 
-    @JsonProperty("wind_degree")
-    public Integer getWindDegree() {
-        return windDegree;
-    }
+	public void setWindDir(String windDir){
+		this.windDir = windDir;
+	}
 
-    @JsonProperty("wind_degree")
-    public void setWindDegree(Integer windDegree) {
-        this.windDegree = windDegree;
-    }
+	public String getWindDir(){
+		return windDir;
+	}
 
-    @JsonProperty("wind_dir")
-    public String getWindDir() {
-        return windDir;
-    }
+	public void setPressure(int pressure){
+		this.pressure = pressure;
+	}
 
-    @JsonProperty("wind_dir")
-    public void setWindDir(String windDir) {
-        this.windDir = windDir;
-    }
+	public int getPressure(){
+		return pressure;
+	}
 
-    @JsonProperty("pressure")
-    public Integer getPressure() {
-        return pressure;
-    }
+	public void setCloudcover(int cloudcover){
+		this.cloudcover = cloudcover;
+	}
 
-    @JsonProperty("pressure")
-    public void setPressure(Integer pressure) {
-        this.pressure = pressure;
-    }
+	public int getCloudcover(){
+		return cloudcover;
+	}
 
-    @JsonProperty("precip")
-    public Integer getPrecip() {
-        return precip;
-    }
+	public void setPrecip(int precip){
+		this.precip = precip;
+	}
 
-    @JsonProperty("precip")
-    public void setPrecip(Integer precip) {
-        this.precip = precip;
-    }
+	public int getPrecip(){
+		return precip;
+	}
 
-    @JsonProperty("humidity")
-    public Integer getHumidity() {
-        return humidity;
-    }
+	public void setUvIndex(int uvIndex){
+		this.uvIndex = uvIndex;
+	}
 
-    @JsonProperty("humidity")
-    public void setHumidity(Integer humidity) {
-        this.humidity = humidity;
-    }
+	public int getUvIndex(){
+		return uvIndex;
+	}
 
-    @JsonProperty("cloudcover")
-    public Integer getCloudcover() {
-        return cloudcover;
-    }
+	public void setTemperature(int temperature){
+		this.temperature = temperature;
+	}
 
-    @JsonProperty("cloudcover")
-    public void setCloudcover(Integer cloudcover) {
-        this.cloudcover = cloudcover;
-    }
+	public int getTemperature(){
+		return temperature;
+	}
 
-    @JsonProperty("feelslike")
-    public Integer getFeelslike() {
-        return feelslike;
-    }
+	public void setHumidity(int humidity){
+		this.humidity = humidity;
+	}
 
-    @JsonProperty("feelslike")
-    public void setFeelslike(Integer feelslike) {
-        this.feelslike = feelslike;
-    }
+	public int getHumidity(){
+		return humidity;
+	}
 
-    @JsonProperty("uv_index")
-    public Integer getUvIndex() {
-        return uvIndex;
-    }
+	public void setWindSpeed(int windSpeed){
+		this.windSpeed = windSpeed;
+	}
 
-    @JsonProperty("uv_index")
-    public void setUvIndex(Integer uvIndex) {
-        this.uvIndex = uvIndex;
-    }
+	public int getWindSpeed(){
+		return windSpeed;
+	}
 
-    @JsonProperty("visibility")
-    public Integer getVisibility() {
-        return visibility;
-    }
+	public void setWeatherCode(int weatherCode){
+		this.weatherCode = weatherCode;
+	}
 
-    @JsonProperty("visibility")
-    public void setVisibility(Integer visibility) {
-        this.visibility = visibility;
-    }
+	public int getWeatherCode(){
+		return weatherCode;
+	}
 
-    @JsonProperty("is_day")
-    public String getIsDay() {
-        return isDay;
-    }
-
-    @JsonProperty("is_day")
-    public void setIsDay(String isDay) {
-        this.isDay = isDay;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this).append("observationTime", observationTime).append("temperature", temperature).append("weatherCode", weatherCode).append("weatherIcons", weatherIcons).append("weatherDescriptions", weatherDescriptions).append("windSpeed", windSpeed).append("windDegree", windDegree).append("windDir", windDir).append("pressure", pressure).append("precip", precip).append("humidity", humidity).append("cloudcover", cloudcover).append("feelslike", feelslike).append("uvIndex", uvIndex).append("visibility", visibility).append("isDay", isDay).append("additionalProperties", additionalProperties).toString();
-    }
-
+	@Override
+ 	public String toString(){
+		return 
+			"Current{" + 
+			"weather_descriptions = '" + weatherDescriptions + '\'' + 
+			",observation_time = '" + observationTime + '\'' + 
+			",wind_degree = '" + windDegree + '\'' + 
+			",visibility = '" + visibility + '\'' + 
+			",weather_icons = '" + weatherIcons + '\'' + 
+			",feelslike = '" + feelslike + '\'' + 
+			",is_day = '" + isDay + '\'' + 
+			",wind_dir = '" + windDir + '\'' + 
+			",pressure = '" + pressure + '\'' + 
+			",cloudcover = '" + cloudcover + '\'' + 
+			",precip = '" + precip + '\'' + 
+			",uv_index = '" + uvIndex + '\'' + 
+			",temperature = '" + temperature + '\'' + 
+			",humidity = '" + humidity + '\'' + 
+			",wind_speed = '" + windSpeed + '\'' + 
+			",weather_code = '" + weatherCode + '\'' + 
+			"}";
+		}
 }

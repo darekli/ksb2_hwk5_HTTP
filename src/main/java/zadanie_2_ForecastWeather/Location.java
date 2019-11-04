@@ -1,155 +1,101 @@
-
 package zadanie_2_ForecastWeather;
 
-import java.util.HashMap;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+public class Location{
+	private String localtime;
+	private String utcOffset;
+	private String country;
+	private int localtimeEpoch;
+	private String name;
+	private String timezoneId;
+	private String lon;
+	private String region;
+	private String lat;
 
+	public void setLocaltime(String localtime){
+		this.localtime = localtime;
+	}
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "name",
-    "country",
-    "region",
-    "lat",
-    "lon",
-    "timezone_id",
-    "localtime",
-    "localtime_epoch",
-    "utc_offset"
-})
-public class Location {
+	public String getLocaltime(){
+		return localtime;
+	}
 
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("country")
-    private String country;
-    @JsonProperty("region")
-    private String region;
-    @JsonProperty("lat")
-    private String lat;
-    @JsonProperty("lon")
-    private String lon;
-    @JsonProperty("timezone_id")
-    private String timezoneId;
-    @JsonProperty("localtime")
-    private String localtime;
-    @JsonProperty("localtime_epoch")
-    private Integer localtimeEpoch;
-    @JsonProperty("utc_offset")
-    private String utcOffset;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	public void setUtcOffset(String utcOffset){
+		this.utcOffset = utcOffset;
+	}
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
-    }
+	public String getUtcOffset(){
+		return utcOffset;
+	}
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setCountry(String country){
+		this.country = country;
+	}
 
-    @JsonProperty("country")
-    public String getCountry() {
-        return country;
-    }
+	public String getCountry(){
+		return country;
+	}
 
-    @JsonProperty("country")
-    public void setCountry(String country) {
-        this.country = country;
-    }
+	public void setLocaltimeEpoch(int localtimeEpoch){
+		this.localtimeEpoch = localtimeEpoch;
+	}
 
-    @JsonProperty("region")
-    public String getRegion() {
-        return region;
-    }
+	public int getLocaltimeEpoch(){
+		return localtimeEpoch;
+	}
 
-    @JsonProperty("region")
-    public void setRegion(String region) {
-        this.region = region;
-    }
+	public void setName(String name){
+		this.name = name;
+	}
 
-    @JsonProperty("lat")
-    public String getLat() {
-        return lat;
-    }
+	public String getName(){
+		return name;
+	}
 
-    @JsonProperty("lat")
-    public void setLat(String lat) {
-        this.lat = lat;
-    }
+	public void setTimezoneId(String timezoneId){
+		this.timezoneId = timezoneId;
+	}
 
-    @JsonProperty("lon")
-    public String getLon() {
-        return lon;
-    }
+	public String getTimezoneId(){
+		return timezoneId;
+	}
 
-    @JsonProperty("lon")
-    public void setLon(String lon) {
-        this.lon = lon;
-    }
+	public void setLon(String lon){
+		this.lon = lon;
+	}
 
-    @JsonProperty("timezone_id")
-    public String getTimezoneId() {
-        return timezoneId;
-    }
+	public String getLon(){
+		return lon;
+	}
 
-    @JsonProperty("timezone_id")
-    public void setTimezoneId(String timezoneId) {
-        this.timezoneId = timezoneId;
-    }
+	public void setRegion(String region){
+		this.region = region;
+	}
 
-    @JsonProperty("localtime")
-    public String getLocaltime() {
-        return localtime;
-    }
+	public String getRegion(){
+		return region;
+	}
 
-    @JsonProperty("localtime")
-    public void setLocaltime(String localtime) {
-        this.localtime = localtime;
-    }
+	public void setLat(String lat){
+		this.lat = lat;
+	}
 
-    @JsonProperty("localtime_epoch")
-    public Integer getLocaltimeEpoch() {
-        return localtimeEpoch;
-    }
+	public String getLat(){
+		return lat;
+	}
 
-    @JsonProperty("localtime_epoch")
-    public void setLocaltimeEpoch(Integer localtimeEpoch) {
-        this.localtimeEpoch = localtimeEpoch;
-    }
-
-    @JsonProperty("utc_offset")
-    public String getUtcOffset() {
-        return utcOffset;
-    }
-
-    @JsonProperty("utc_offset")
-    public void setUtcOffset(String utcOffset) {
-        this.utcOffset = utcOffset;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this).append("name", name).append("country", country).append("region", region).append("lat", lat).append("lon", lon).append("timezoneId", timezoneId).append("localtime", localtime).append("localtimeEpoch", localtimeEpoch).append("utcOffset", utcOffset).append("additionalProperties", additionalProperties).toString();
-    }
-
+	@Override
+ 	public String toString(){
+		return 
+			"Location{" + 
+			"localtime = '" + localtime + '\'' + 
+			",utc_offset = '" + utcOffset + '\'' + 
+			",country = '" + country + '\'' + 
+			",localtime_epoch = '" + localtimeEpoch + '\'' + 
+			",name = '" + name + '\'' + 
+			",timezone_id = '" + timezoneId + '\'' + 
+			",lon = '" + lon + '\'' + 
+			",region = '" + region + '\'' + 
+			",lat = '" + lat + '\'' + 
+			"}";
+		}
 }

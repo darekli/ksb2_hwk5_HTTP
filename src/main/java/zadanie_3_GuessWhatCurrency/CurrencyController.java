@@ -104,7 +104,7 @@ public class CurrencyController extends VerticalLayout {
         } else if (randomCountry == 31) {
              rate = forObject2.getRates(currencies).getMYR();
         } else {
-            System.out.println("Błąd w kodzie");
+            System.out.println("There is some error, don't ask me. Find yourself.");
         }
         System.out.println();
 
