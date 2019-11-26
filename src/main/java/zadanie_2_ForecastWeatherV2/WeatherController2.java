@@ -6,6 +6,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -28,6 +29,7 @@ Current current;
         RestTemplate restTemplate = new RestTemplate();
         String forObject = restTemplate.getForObject( "http://api.weatherstack.com/current?access_key=bee9823c5b680ef0e45834c2cc477727&query=Szczecin",String.class) ;
         System.out.println("1. "+forObject);
+
 
 //        JsonNode temperature = restTemplate.getForObject("http://api.weatherstack.com/current?access_key=bee9823c5b680ef0e45834c2cc477727&query=Szczecin",JsonNode.class).get("temperature");
 //        System.out.println("2. "+current.getTemperature());

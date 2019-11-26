@@ -1,5 +1,5 @@
 
-package ForecastWeatherV3;
+package zadanie_2_ForecastWeatherV3;
 
 import java.util.HashMap;
 import java.util.Map;

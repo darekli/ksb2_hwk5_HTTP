@@ -1,10 +1,10 @@
-package ForecastWeatherV3;
+package zadanie_2_ForecastWeatherV3;
 
 
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.StyleSheet;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -31,7 +31,7 @@ public class WeatherGui extends VerticalLayout {
                 "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=e5cedde7dc5237ac4ed1453b7613d699",
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
-                ForecastWeatherV3.WeatherApi.class
+                zadanie_2_ForecastWeatherV3.WeatherApi.class
         );
 
         return exchange;
@@ -39,17 +39,18 @@ public class WeatherGui extends VerticalLayout {
 
     public WeatherGui() {
 
-
         setAlignItems(Alignment.CENTER);
-        TextField textFieldSetCity = new TextField("Enter a city:");
-        Button buttonCheckWeather = new Button("Check weather!");
+        H2 header = new H2("Check your Worldwide Weather" );
+        setAlignItems(Alignment.CENTER);
+        TextField textFieldSetCity = new TextField("Choose a city:");
+        Button buttonCheckWeather = new Button("Check Today Weather Forecast!");
 
 
         LocalDate timeNow = LocalDate.now();
 
 
         //setAlignItems(Alignment.CENTER);
-        Label labelCityAndCountry = new Label();
+        Label labelCity = new Label();
         Image weatherIcon = new Image();
         Label labelTemperature = new Label();
         Label labelPressure = new Label();
@@ -66,7 +67,7 @@ public class WeatherGui extends VerticalLayout {
         buttonCheckWeather.addClickListener(clickEvent -> {
             this.city = textFieldSetCity.getValue();
 
-            labelCityAndCountry.setText(connectToApi().getBody().getName() + ", " + connectToApi().getBody().getSys().getCountry());
+            labelCity.setText(connectToApi().getBody().getName() + ", " + connectToApi().getBody().getSys().getCountry());
             weatherIcon.setSrc("http://openweathermap.org/img/wn/" + connectToApi().getBody().getWeather().get(0).getIcon() + "@2x.png");
             labelTemperature.setText("Temperature: " + connectToApi().getBody().getMain().getTemp().intValue() + "°C");
             labelPressure.setText("Pressure: " + connectToApi().getBody().getMain().getPressure() + " hPa");
@@ -84,11 +85,11 @@ public class WeatherGui extends VerticalLayout {
 
         add(
 
-
+                header,
                 textFieldSetCity,
                 buttonCheckWeather,
                 labelTimeNow,
-                labelCityAndCountry,
+                labelCity,
                 weatherIcon,
                 labelTemperature,
                 labelPressure,
